@@ -38,8 +38,6 @@ elif cat /proc/version | grep -Eqi "centos|red hat|redhat"; then
     systemPackage="yum"
     systempwd="/usr/lib/systemd/system/"
 fi
-green $release
-red $systemPackage
 
 environmentPath="~/.bashrc"
 
@@ -175,7 +173,7 @@ start_menu(){
 sudo -s
 mkdir /data/.ccache
 chmod 777 /data/.ccache
-systemPackage install -y wget unzip
+systemPackage install -y wget
 mkdir BLADE_EVN
 cd BLADE_EVN
   clear	
