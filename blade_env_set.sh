@@ -163,6 +163,9 @@ check_my_env(){
 
 sucess(){
 	blue "blade 详细介绍: https://iwiki.woa.com/pages/viewpage.action?pageId=487144353"
+	blue "下一步请到cpp_proj下面运行sh config_env.sh"
+	blue "最终使用，通过\"blade_run  ...\"编译整个项目"
+	blue "编译目标文件夹\"blade_run server/ai_.....\""
 	green "成功安装四个模块，按回车退出。"
 	read test
 }
