@@ -73,10 +73,11 @@ ninja_install(){
 	fi
 
 	if test -s ninja; then 
-		git clone git://github.com/ninja-build/ninja.git 
+		echo "has clone"
 	else
-		cd ninja
+		git clone git://github.com/ninja-build/ninja.git 
 	fi
+	cd ninja
 	./configure.py --bootstrap
 	cp ninja /usr/bin/
 	cd ..
@@ -99,8 +100,9 @@ blade_install(){
 	fi
 	tar xvf blade.tar
 	cd blade-build
-	echo "export PATH=\"$PATH:$pwd\""   >> ~/.bashrc
+	echo "export PATH=$(pwd):$PATH"   >> ~/.bashrc
 	cd ..
+	source  ~/.bashrc
 	green "3.blade 安装成功，请继续"
 }
 
