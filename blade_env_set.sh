@@ -58,7 +58,14 @@ re2c_install(){
  	cd re2c-0.12.1 && ./configure
  	make && make install
  	cd ..
- 	green "1.re2c 安装成功，请继续"
+
+ 	if type re2c >/dev/null 2>&1; then
+ 		green "1.re2c 安装成功，请继续"
+    else
+    	red 're2c 安装失败';
+    	sleep 3s
+	fi
+
 }
 
 
@@ -79,7 +86,13 @@ ninja_install(){
 	./configure.py --bootstrap
 	cp ninja /usr/bin/
 	cd ..
-	green "2.ninja 安装成功，请继续"
+	
+	if type ninja >/dev/null 2>&1; then
+    	green "2.ninja 安装成功，请继续"
+    else
+    	red 'ninja 安装失败';
+    	sleep 3s
+	fi
 }
 
 
@@ -101,7 +114,12 @@ blade_install(){
 	echo "export PATH=$(pwd):$PATH"   >> ~/.bashrc
 	cd ..
 	source  ~/.bashrc
-	green "3.blade 安装成功，请继续"
+	if type blade >/dev/null 2>&1; then
+    	green "3. blade 安装成功，请继续"
+    else
+    	red 'blade 安装失败';
+    	sleep 3s
+	fi
 }
 
 ccache_install(){
@@ -121,7 +139,13 @@ ccache_install(){
 	echo "export CCACHE_DIR=/data/.ccache" >> ~/.bashrc  #写入环境配置文件中
 	echo "export USE_CCACHE=1" >> ~/.bashrc
 	source ~/.bashrc 
-	green "4.ccache 安装成功，请继续"
+	
+	if type ccache >/dev/null 2>&1; then
+    	green "4.ccache 安装成功，请继续"
+    else
+    	red 'ccache 安装失败';
+    	sleep 3s
+	fi
 }
 
 change_dir(){
@@ -170,7 +194,6 @@ sucess(){
 
 
 start_menu(){
-sudo -s
 mkdir /data/.ccache
 chmod 777 /data/.ccache
 systemPackage install -y wget
