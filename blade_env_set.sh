@@ -170,90 +170,9 @@ sucess(){
 	read test
 }
 
-# echo "export JAVA_HOME=$environment" >> ~/.bashrc  #将需要配置的JAVA_HOME写入环境配置文件中
-# echo "export PATH=$environment/bin:\$PATH" >> ~/.bashrc
-# source ~/.bashrc
-
-# change_panel(){
-# if test -s /etc/systemd/system/trojan-web.service; then
-# 	green " "
-# 	green " "
-# 	green "================================="
-# 	 blue "  检测到Trojan面板服务，开始配置"
-# 	green "================================="
-# 	sleep 2s
-# 	# $systemPackage update -y
-# 	# $systemPackage -y install nginx unzip curl wget
-# 	# systemctl enable nginx
-# 	# systemctl stop nginx
-# if test -s /etc/nginx/nginx.conf; then
-# 	# rm -rf /etc/nginx/nginx.conf
-#   # wget -P /etc/nginx https://raw.githubusercontent.com/V2RaySSR/Trojan_panel_web/master/nginx.conf
-# 	green "================================="
-# 	blue "     请输入Trojan绑定的域名"
-# 	green "================================="
-# 	read your_domain
-#   # sed -i "s/localhost/$your_domain/;" /etc/nginx/nginx.conf
-# 	green " "
-# 	green "================================="
-# 	 blue "    开始下载伪装站点源码并部署"
-# 	green "================================="
-# 	sleep 2s
-# 	# rm -rf /usr/share/nginx/html/*
-# 	# cd /usr/share/nginx/html/
-# 	# wget https://github.com/V2RaySSR/Trojan/raw/master/web.zip
-# 	# unzip web.zip
-# 	green " "
-# 	green "================================="
-# 	blue "       开始配置trojan-web"
-# 	green "================================="
-# 	sleep 2s
-#   # sed -i '/ExecStart/s/trojan web -p 81/trojan web/g' /etc/systemd/system/trojan-web.service
-#   # sed -i '/ExecStart/s/trojan web/trojan web -p 81/g' /etc/systemd/system/trojan-web.service
-#   # systemctl daemon-reload
-#   # systemctl restart trojan-web
-#   # systemctl restart nginx
-#   green " "
-#   green " "
-#   green " "
-# 	green "=================================================================="
-# 	green " "
-# 	 blue "  WIN / MAC 通用客户端下载、本脚本更多介绍内容 "
-# 	 blue "  https://www.v2rayssr.com/trojanpanel.html "
-# 	green " "
-# 	 blue "  脚本交流电报群：https://goii.cc/tg"
-# 	green " "
-# 	 blue "  伪装站点目录 /usr/share/nginx/html "
-# 	 blue "  面板管理地址 http://$your_domain:81 "
-# 	green "=================================================================="
-# else
-# 	green "==============================="
-# 	  red "     Nginx未正确安装 请重试"
-# 	green "==============================="
-# 	sleep 2s
-# 	exit 1
-# fi
-# else
-# 	green "==============================="
-# 	  red "    未检测到Trojan面板服务"
-# 	green "==============================="
-# 	sleep 2s
-# 	exit 1
-# fi
-# }
-
-# bbr_boost_sh(){
-#     $systemPackage install -y wget
-#     # wget -N --no-check-certificate -q -O tcp.sh "https://raw.githubusercontent.com/chiakge/Linux-NetSpeed/master/tcp.sh" && chmod +x tcp.sh && bash tcp.sh
-# }
-
-# trojan_install(){
-#     $systemPackage install -y curl
-# 		source <(curl -sL https://git.io/trojan-install)
-# }
 
 start_menu(){
-systemPackage install -y wget
+systemPackage install -y wget unzip
 mkdir BLADE_EVN
 cd BLADE_EVN
   clear	
