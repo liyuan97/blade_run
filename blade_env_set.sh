@@ -119,9 +119,7 @@ ccache_install(){
 	./configure -prefix=/var/ccache
 	make -j8
 	make install
-
-	# ln -s /var/ccache/bin/ccache /usr/bin/ccache
-
+	ln -s /var/ccache/bin/ccache /usr/bin/ccache
 	echo "export CCACHE_DIR=/data/.ccache" >> ~/.bashrc  #写入环境配置文件中
 	echo "export USE_CCACHE=1" >> ~/.bashrc
 	source ~/.bashrc 
@@ -256,6 +254,8 @@ sucess(){
 
 start_menu(){
 systemPackage install -y wget
+mkdir BLADE_EVN
+cd BLADE_EVN
   clear	
     green "=========================================================="
    	blue " 简介：一键安装 re2c ninja blade ccache 编译环境，提高开发效率100%"
