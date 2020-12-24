@@ -137,17 +137,25 @@ change_dir(){
 check_my_env(){
 	if type re2c >/dev/null 2>&1; then
     	red 're2c 已安装';
+    else
+    	red 're2c 未安装';
 	fi
 	if type ninja >/dev/null 2>&1; then
     	red 'ninja 已安装';
+    else
+    	red 'ninja 未安装';
 	fi
 	if type blade >/dev/null 2>&1; then
     	red 'blade 已安装';
+    else
+    	red 'blade 未安装';
 	fi
 	if type ccache >/dev/null 2>&1; then
     	red 'ccache 已安装';
+    else
+    	red 'ccache 未安装';
 	fi
-	if [[ $? -eq 1 ]]; then 
+	if  [ type re2c >/dev/null 2>&1 ]&& [  type ninja >/dev/null 2>&  ]&& [  type blade >/dev/null 2>&1  ]&& [  type ccache >/dev/null 2>&1  ]; then 
 		green "环境正常，re2c ninja blade ccache已安装"
 	fi
 	sucess
